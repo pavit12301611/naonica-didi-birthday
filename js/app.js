@@ -254,25 +254,6 @@ function initCake(){
   }
 }
 
-// Gallery lightbox
-function initGallery(){
-  const lb=$("#lightbox");
-  if(!lb) return;
-  $$("[data-lightbox]").forEach(el=>{
-    el.addEventListener("click", ()=>{
-      const img=el.dataset.img || el.querySelector("img")?.src;
-      const title=el.dataset.title||"Memory";
-      const desc=el.dataset.desc||"";
-      $("#lbImg").src=img;
-      $("#lbTitle").textContent=title;
-      $("#lbDesc").textContent=desc;
-      lb.classList.add("open");
-    });
-  });
-  lb.addEventListener("click", (e)=>{ if(e.target===lb) lb.classList.remove("open"); });
-  const close=$("#lbClose"); if(close) close.addEventListener("click",()=>lb.classList.remove("open"));
-}
-
 // Share
 function initShare(){
   const btn=$("#shareBtn");
@@ -293,7 +274,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
   initCountdown();
   initWishes();
   initCake();
-  initGallery();
   initShare();
   // global confetti buttons
   $$("[data-confetti]").forEach(b=> b.addEventListener("click", confettiBurst));
