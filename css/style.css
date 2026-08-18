@@ -121,11 +121,13 @@ button{font-family:inherit}
 @keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.3);opacity:0.7}}
 .hero-title{
   font-family:'Great Vibes',cursive;
-  font-size:54px;line-height:0.95;
+  font-size:42px;line-height:1.2;
   color:var(--plum);
-  margin:18px 0 6px;
+  margin:16px 0 10px;
   font-weight:400;
 }
+@media(min-width:380px){.hero-title{font-size:48px}}
+@media(min-width:480px){.hero-title{font-size:54px;line-height:1.1}}
 .hero-name{
   font-family:'Playfair Display',serif;
   font-size:42px;line-height:0.9;letter-spacing:0.08em;
@@ -167,14 +169,24 @@ button{font-family:inherit}
   background:radial-gradient(400px 200px at 50% 0%, rgba(255,255,255,0.16), transparent 70%);
 }
 .photo-placeholder{
-  position:relative;z-index:2;text-align:center;color:white;padding:20px;
+  position:relative;z-index:2;text-align:center;color:white;padding:64px 22px 20px;
 }
 .photo-placeholder .script{font-family:'Great Vibes',cursive;font-size:38px;line-height:1;opacity:0.95}
+.photo-quote{margin-top:14px;font-size:12px;opacity:0.85;line-height:1.5}
+@media(max-width:374px){
+  .photo-placeholder{padding:28px 12px 16px}
+  .photo-placeholder .script{font-size:30px}
+  .photo-quote{font-size:11.5px}
+}
 .photo-placeholder .name{font-family:'Playfair Display',serif;font-weight:800;letter-spacing:0.18em;font-size:22px;margin-top:6px}
 .photo-placeholder .tag{margin-top:10px;display:inline-block;background:rgba(255,255,255,0.14);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.18);padding:6px 12px;border-radius:100px;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;font-weight:600}
 .floating{position:absolute;z-index:3;background:white;border-radius:16px;padding:10px 12px;box-shadow:0 12px 30px rgba(45,11,40,0.12);display:flex;align-items:center;gap:10px;border:1px solid var(--border)}
-.floating.f1{left:10px;top:18px;transform:rotate(-2deg)}
-.floating.f2{right:10px;bottom:22px;transform:rotate(1.5deg)}
+.floating.f1{left:-8px;top:-14px;transform:rotate(-2deg)}
+.floating.f2{right:-8px;top:-14px;transform:rotate(1.5deg)}
+@media(max-width:374px){
+  .floating.f1{left:-6px;transform:rotate(-2deg) scale(0.82);transform-origin:top left}
+  .floating.f2{right:-6px;transform:rotate(1.5deg) scale(0.82);transform-origin:top right}
+}
 .floating .emoji{width:36px;height:36px;border-radius:12px;display:grid;place-items:center;font-size:18px}
 .floating.f1 .emoji{background:#FFF0F6}
 .floating.f2 .emoji{background:#FFF8E6}
@@ -259,7 +271,8 @@ button{font-family:inherit}
 @media(min-width:600px){.letter-inner{padding:28px 28px 28px 74px}}
 .letter-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
 .seal{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,#8B1E3F,#5A1A3A);display:grid;place-items:center;color:#FFDAB9;font-size:16px;box-shadow:0 8px 18px rgba(90,26,58,0.28);border:2px solid #FFDAB9}
-.letter-title{font-family:'Great Vibes',cursive;font-size:34px;color:var(--plum);line-height:1}
+.letter-title{font-family:'Great Vibes',cursive;font-size:34px;color:var(--plum);line-height:1.25}
+@media(max-width:400px){.letter-title{font-size:29px}}
 .letter-subtitle{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-top:2px}
 .letter-body{font-size:14.5px;line-height:1.85;color:#3E2A36}
 .letter-body p{margin-bottom:14px}
@@ -318,10 +331,10 @@ button{font-family:inherit}
 .chip{font-size:11px;background:var(--blush);color:var(--wine);padding:5px 8px;border-radius:100px;font-weight:600;border:1px solid rgba(232,160,191,0.3)}
 
 /* Timeline */
-.timeline{position:relative;padding-left:18px;margin-top:8px}
+.timeline{position:relative;padding-left:0;margin-top:8px}
 .timeline::before{content:"";position:absolute;left:7px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg, var(--rose) 0%, var(--gold) 100%);border-radius:100px;opacity:0.5}
 .tl-item{position:relative;padding:0 0 18px 18px}
-.tl-item::before{content:"";position:absolute;left:-4px;top:4px;width:14px;height:14px;background:white;border:3px solid var(--wine);border-radius:50%;box-shadow:0 2px 8px rgba(0,0,0,0.08)}
+.tl-item::before{content:"";position:absolute;left:-17px;top:4px;width:14px;height:14px;background:white;border:3px solid var(--wine);border-radius:50%;box-shadow:0 2px 8px rgba(0,0,0,0.08)}
 .tl-card{background:white;border-radius:18px;padding:14px;border:1px solid var(--border);box-shadow:var(--shadow2)}
 .tl-card h4{font-size:13px;font-weight:700;color:var(--plum)}
 .tl-card p{font-size:12px;color:var(--muted);margin-top:4px;line-height:1.6}
