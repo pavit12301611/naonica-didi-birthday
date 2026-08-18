@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Letter for Naonica Didi 💌 — Happy Birthday</title>
+<meta name="theme-color" content="#2D0B28">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="bg-ornament"><div class="bg-blob b1"></div><div class="bg-blob b2"></div></div>
+<canvas id="confetti"></canvas>
+<header class="topbar">
+  <a href="index.html" class="brand">
+    <div class="brand-mark">N</div>
+    <div class="brand-text"><strong>NAONICA</strong><span>Birthday Surprise • 2026</span></div>
+  </a>
+  <div class="top-actions">
+    <button class="icon-btn" id="musicBtn" aria-label="Toggle music">🔇</button>
+    <button class="icon-btn gold" id="shareBtn">↗</button>
+  </div>
+</header>
+<audio id="bgAudio" loop preload="none" src="https://cdn.pixabay.com/download/audio/2022/03/24/audio_0d38a2a75d.mp3?filename=happy-birthday-108323.mp3"></audio>
+
+<main class="container">
+  <section class="section" style="padding-bottom:6px">
+    <div class="section-head" style="margin-bottom:14px">
+      <div class="hero-badge" style="margin-bottom:10px">💌 From the heart • Only for you</div>
+      <h2>A Letter for my <em>Didi</em></h2>
+      <p>Read slowly — every word is wrapped in love and gratitude.</p>
+    </div>
+
+    <div class="letter-paper reveal">
+      <div class="letter-inner">
+        <div class="letter-top">
+          <div>
+            <div class="letter-title">My Dearest Naonica Didi,</div>
+            <div class="letter-subtitle">18th August 2026 • With all my love</div>
+          </div>
+          <div class="seal">♡</div>
+        </div>
+
+        <div class="letter-body">
+          <p><span class="dropcap">H</span>appy Birthday, Didi! Today the world feels a little softer, a little brighter — because it’s the day you were born. If I could wrap all my love into words, I’d write you a library, but let me try to tell you in this one letter what you mean to me.</p>
+
+          <p>You’ve been my first teacher, my fiercest protector, my softest safe place. I still remember how you’d fix my hair before school, scold me when I was being lazy, and then secretly slip me that extra chocolate when no one was watching. You’ve celebrated my tiny wins like they were big festivals and held my hand through the days I didn’t even know how to ask for help.</p>
+
+          <p>Didi, your strength amazes me. The way you handle everything with grace — your smile even when you’re tired, your calm even when things are messy, your love even when we’re being difficult — it’s nothing short of magic. You make “being there” look effortless, but I know how much heart you pour into our family every single day.</p>
+
+          <p>I hope today you feel even a fraction of the love you give us. You deserve flowers without a reason, surprises for no occasion, and all the mithai, laughter, and music your heart wants. You deserve rest, you deserve dreams that come true, you deserve people who see and cherish how rare you are.</p>
+
+          <p>On your birthday, my only prayer is this: <strong style="color:var(--wine)">May your year be gentle on your heart, kind to your dreams, and full of reasons to smile that big, beautiful smile of yours.</strong> May health, happiness and success follow you wherever you go — and may you never forget how deeply, endlessly loved you are.</p>
+
+          <p>Thank you for being my didi. Thank you for being you. No gift in this little website can ever match what you’ve given me — but I hope when you scroll through it, you feel hugged. Because that’s what this is — a big, warm, tight hug from me to you.</p>
+
+          <p style="margin-bottom:0">I love you, Didi. More than words, more than pages, more than birthdays can count.</p>
+
+          <div class="signature">
+            <div style="font-size:13px;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase;font-weight:700">Forever your —</div>
+            <div class="script">Your little one who adores you</div>
+            <small>— with love, cuddles, and endless respect ♡</small>
+            <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+              <span class="chip">🌸 My first best friend</span>
+              <span class="chip">👑 My hero</span>
+              <span class="chip">💫 My didi</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="margin-top:14px">
+      <button class="btn btn-primary" style="flex:1" data-confetti>Send Her Love 💖</button>
+      <a href="memories.html" class="btn btn-ghost" style="flex:1">See Memories 📸</a>
+    </div>
+
+    <div class="card reveal" style="margin-top:12px;display:flex;gap:12px;align-items:center">
+      <div style="width:44px;height:44px;border-radius:14px;background:#FFF0F6;display:grid;place-items:center">🎧</div>
+      <div style="flex:1">
+        <strong style="font-size:13px;color:var(--plum)">Play the letter as audio</strong>
+        <p style="font-size:12px;color:var(--muted)">Tap music on top and read along — it feels like a warm voice note.</p>
+      </div>
+      <button class="icon-btn" id="musicBtn2">▶</button>
+    </div>
+
+  </section>
+  <div class="spacer"></div>
+</main>
+
+<nav class="bottom-nav">
+  <a class="nav-item" href="index.html"><i>🏠</i>Home</a>
+  <a class="nav-item active" href="letter.html"><i>💌</i>Letter</a>
+  <a class="nav-item" href="memories.html"><i>📸</i>Memories</a>
+  <a class="nav-item" href="wishes.html"><i>✨</i>Wishes</a>
+  <a class="nav-item" href="surprise.html"><i>🎂</i>Surprise</a>
+</nav>
+
+<script src="js/app.js"></script>
+<script>
+document.getElementById('musicBtn2')?.addEventListener('click',()=> document.getElementById('musicBtn')?.click());
+</script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Surprise Cake for Naonica Didi 🎂</title>
+<meta name="theme-color" content="#2D0B28">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="bg-ornament"><div class="bg-blob b1"></div><div class="bg-blob b3"></div></div>
+<canvas id="confetti"></canvas>
+<header class="topbar">
+  <a href="index.html" class="brand">
+    <div class="brand-mark">N</div>
+    <div class="brand-text"><strong>NAONICA</strong><span>Birthday Surprise • 2026</span></div>
+  </a>
+  <div class="top-actions">
+    <button class="icon-btn" id="musicBtn">🔇</button>
+    <button class="icon-btn gold" id="shareBtn">↗</button>
+  </div>
+</header>
+<audio id="bgAudio" loop preload="none" src="https://cdn.pixabay.com/download/audio/2022/03/24/audio_0d38a2a75d.mp3?filename=happy-birthday-108323.mp3"></audio>
+
+<main class="container">
+  <section class="section">
+    <div class="section-head">
+      <div class="hero-badge">🎂 Make a wish & blow the candles</div>
+      <h2>Time to <em>celebrate!</em></h2>
+      <p>Tap the flames to blow them out — or use your mic. Let’s make Didi’s wish come true!</p>
+    </div>
+
+    <div class="cake-wrap reveal">
+      <div class="cake-stage">
+        <div style="position:relative;z-index:1;color:white;text-align:center">
+          <div style="font-size:11px;letter-spacing:0.18em;text-transform:uppercase;font-weight:800;opacity:0.85">For</div>
+          <div style="font-family:'Playfair Display',serif;font-weight:800;letter-spacing:0.12em;font-size:18px;margin-top:2px">NAONICA DIDI</div>
+          <div style="width:40px;height:2px;background:var(--gold);margin:8px auto;border-radius:100px"></div>
+        </div>
+
+        <div class="candles" aria-label="Candles — tap to blow">
+          <div class="candle" role="button" aria-label="Blow candle 1"><div class="flame"></div></div>
+          <div class="candle" role="button" aria-label="Blow candle 2"><div class="flame"></div></div>
+          <div class="candle" role="button" aria-label="Blow candle 3"><div class="flame"></div></div>
+          <div class="candle" role="button" aria-label="Blow candle 4"><div class="flame"></div></div>
+          <div class="candle" role="button" aria-label="Blow candle 5"><div class="flame"></div></div>
+        </div>
+
+        <div class="cake">
+          <div class="cake-tier t1"><div class="drip" style="height:12px"></div></div>
+          <div class="cake-tier t2"><div class="drip"></div><div class="icing-dots"><i></i><i></i><i></i><i></i><i></i></div></div>
+          <div class="cake-tier t3"><div class="drip" style="height:18px"></div><div class="icing-dots"><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+        </div>
+        <div class="plate"></div>
+
+        <div class="hint">💡 Tap each flame to blow it • Try the mic!</div>
+
+        <div class="cake-actions">
+          <button class="btn btn-gold" id="blowBtn">Blow All Candles 💨</button>
+          <button class="btn" id="micBlow" style="background:rgba(255,255,255,0.14);color:white;border:1px solid rgba(255,255,255,0.2);backdrop-filter:blur(6px)">🎤 Blow with Mic</button>
+        </div>
+        <button class="btn btn-ghost" id="resetCandles" style="margin-top:10px;background:rgba(255,255,255,0.10);color:white;border-color:rgba(255,255,255,0.18)">Relight Candles 🕯️</button>
+
+        <div id="cakeMsg" class="reveal-box" style="display:none;margin-top:16px">
+          <!-- filled by JS -->
+        </div>
+      </div>
+
+      <div style="padding:14px 4px 2px;text-align:center">
+        <h4 style="font-family:'Playfair Display',serif;color:var(--plum);font-size:16px">Happy Birthday, my didi! 🎉</h4>
+        <p style="font-size:12.5px;color:var(--muted);margin-top:6px;line-height:1.6">May this year bring you promotions, peace, pretty lehengas, and all the love you shower on us — back to you, multiplied.</p>
+      </div>
+    </div>
+
+    <div class="stack" style="margin-top:14px">
+      <div class="card reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:14px">
+        <button class="btn btn-primary" data-confetti>Confetti 🎉</button>
+        <button class="btn btn-ghost" id="playSong">Play Song 🎶</button>
+        <a href="wishes.html" class="btn btn-ghost" style="grid-column:span 2">See Wishes Wall ✨</a>
+      </div>
+
+      <div class="card reveal" style="text-align:center;background: linear-gradient(135deg, #FFF8F0, #FFF0F6);">
+        <div class="big-emoji">🎁</div>
+        <h4 style="font-family:'Playfair Display',serif;color:var(--plum);margin-top:8px">Your Gift Awaits</h4>
+        <p style="font-size:12.5px;color:var(--muted);margin-top:6px">No gift can match your presence in our lives — but here’s a little token of endless love.</p>
+        <div id="giftBox" style="margin-top:12px;background:white;border:1px dashed #E8A0BF;border-radius:18px;padding:16px;cursor:pointer" onclick="openGift()">
+          <div style="font-size:28px">🎀</div>
+          <div style="font-weight:800;color:var(--plum);margin-top:6px">Tap to unwrap</div>
+          <div style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);font-weight:700">A surprise from your sibling</div>
+        </div>
+        <div id="giftReveal" style="display:none;margin-top:12px;background:var(--plum);color:white;border-radius:18px;padding:16px;">
+          <div style="font-size:20px">💖</div>
+          <h4 style="margin-top:6px">You are loved beyond measure, Didi!</h4>
+          <p style="opacity:0.9;font-size:12.5px;margin-top:6px;line-height:1.6">Take this coupon: <strong style="background:rgba(255,255,255,0.14);padding:4px 8px;border-radius:8px">“One wish — I’ll make it happen”</strong> — valid forever. Ask for anything, and I’m there. Promise.</p>
+          <p style="opacity:0.8;font-size:11px;margin-top:8px">— Your favourite human ♡</p>
+        </div>
+      </div>
+
+      <div class="card reveal" style="text-align:center">
+        <h4 style="color:var(--plum)">Share this surprise with Didi</h4>
+        <p style="font-size:12px;color:var(--muted);margin-top:4px">Send her the link so she can open it on her phone.</p>
+        <button class="btn btn-primary btn-block" style="margin-top:10px" id="shareBtn2">Share Birthday Site 🔗</button>
+        <a href="index.html" class="btn btn-ghost btn-block" style="margin-top:8px">Back to Home 🏠</a>
+      </div>
+    </div>
+  </section>
+  <div class="spacer"></div>
+</main>
+
+<nav class="bottom-nav">
+  <a class="nav-item" href="index.html"><i>🏠</i>Home</a>
+  <a class="nav-item" href="letter.html"><i>💌</i>Letter</a>
+  <a class="nav-item" href="memories.html"><i>📸</i>Memories</a>
+  <a class="nav-item" href="wishes.html"><i>✨</i>Wishes</a>
+  <a class="nav-item active" href="surprise.html"><i>🎂</i>Surprise</a>
+</nav>
+
+<script src="js/app.js"></script>
+<script>
+function openGift(){
+  document.getElementById('giftBox').style.display='none';
+  const r=document.getElementById('giftReveal');
+  r.style.display='block';
+  r.classList.add('in');
+  if(window.confettiBurst) confettiBurst();
+  if(navigator.vibrate) navigator.vibrate([30,20,50]);
+}
+document.getElementById('playSong')?.addEventListener('click',()=> document.getElementById('musicBtn')?.click());
+document.getElementById('shareBtn2')?.addEventListener('click',()=> document.getElementById('shareBtn')?.click());
+</script>
+</body>
+</html>
